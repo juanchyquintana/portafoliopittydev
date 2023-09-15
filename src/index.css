@@ -2,6 +2,11 @@
   font-family: 'Comfortaa', cursive;
 }
 
+body {
+  height: 3000px;
+  overflow-x: hidden;
+}
+
 .bg-image {
   width: 100vw;
   height: 100vh;
@@ -13,6 +18,10 @@
   filter: brightness(0.6);
 }
 
+.main-info {
+  padding: 125px;
+}
+
 .img-footer {
   width: 40px;
   height: 40px;
@@ -21,3 +30,5 @@
 .fs-7 {
   font-size: 12px;
 }
+
+@media all and (min-width: 77)

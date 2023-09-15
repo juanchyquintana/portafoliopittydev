@@ -1,8 +1,10 @@
-import { Container, Row, Col, Image, ListGroup, Navbar, Nav } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { BsInstagram, BsTwitch, BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 import pin from "../img/pin-svgrepo-com.svg";
 import mail from "../img/mail-svgrepo-com.svg";
-import { FaXTwitter } from 'react-icons/fa6'
-import { BsInstagram, BsTwitch, BsGithub, BsLinkedin } from 'react-icons/bs'
+
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -125,11 +127,55 @@ const Footer = () => {
               <Row>
                 <Col className="pt-4">
                   <div className="d-flex  gap-4">
-                      <FaXTwitter />
-                      <BsInstagram />
-                      <BsTwitch />
-                      <BsGithub />
-                      <BsLinkedin />
+                    <div>
+                      <Link
+                        to="https://twitter.com/juanchyquintana"
+                        target="_blank"
+                        className="link-opacity-75-hover"
+                      >
+                        <FaXTwitter />
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link
+                        to="https://www.instagram.com/juanchyquintana"
+                        target="_blank"
+                        className="link-opacity-75-hover"
+                      >
+                        <BsInstagram />
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link
+                        to="#"
+                        target="_blank"
+                        className="link-opacity-75-hover"
+                      >
+                        <BsTwitch />
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link
+                        to="https://github.com/juanchyquintana"
+                        target="_blank"
+                        className="link-opacity-75-hover"
+                      >
+                        <BsGithub />
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link
+                        to="https://www.linkedin.com/in/juan-diego-quintana-b5a186211/"
+                        target="_blank"
+                        className="link-opacity-75-hover"
+                      >
+                        <BsLinkedin />
+                      </Link>
+                    </div>
                   </div>
                 </Col>
               </Row>
@@ -137,9 +183,12 @@ const Footer = () => {
           </Container>
         </div>
 
-        <div className="bg-dark p-4">
+        <div className="bg-dark text-secondary text-center align-items-center  p-3">
           <Container>
-            <h3>2023 Pittydev by Juan Diego Quintana v3. Building Software with ♥ From Tucuman to the world | Política de Privacidad</h3>
+            <p className="lead fs-6 fst-italic ">
+              2023 Pittydev by Juan Diego Quintana v3. Building Software with ♥
+              From Tucuman to the world | Política de Privacidad
+            </p>
           </Container>
         </div>
       </footer>
