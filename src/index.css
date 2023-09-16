@@ -3,13 +3,12 @@
 }
 
 body {
-  height: 3000px;
   overflow-x: hidden;
 }
 
 .bg-image {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -18,8 +17,22 @@ body {
   filter: brightness(0.6);
 }
 
+.navbar {
+  transition: all 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: #0880EC;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
 .main-info {
-  padding: 125px;
+  margin-bottom: 100px;
+}
+
+.marginButton {
+  margin-top: 310px;
+
 }
 
 .img-footer {
@@ -31,4 +44,39 @@ body {
   font-size: 12px;
 }
 
-@media all and (min-width: 77)
+.typing-effect {
+  margin: 50px auto;
+  width: max-content;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 1rem;
+  animation: typing 3s steps(16), effect .5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes effect {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .marginForm {
+    margin-top: 450px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .marginForm {
+    margin-top: 500px;
+    margin-bottom: 100px;
+  }
+}

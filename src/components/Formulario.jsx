@@ -1,7 +1,7 @@
 import { Button, Form, Row, Col } from "react-bootstrap";
 const Formulario = () => {
   return (
-    <Form>
+    <Form className="marginForm">
       <Row>
         <Col md={6}>
           <h3>Métodos de Contactos</h3>
