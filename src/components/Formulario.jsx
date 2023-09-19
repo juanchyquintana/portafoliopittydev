@@ -1,18 +1,51 @@
 import { Button, Form, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import Alerta from "./Alerta";
+
 const Formulario = () => {
+
+  const [validated, setValidated] = useState(false);
+  const [ alerta, setAlerta ] = useState({})
+
+  const [nombre, setNombre] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const { msg } = alerta;
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    if([nombre, correo, mensaje].includes("")) {
+      setAlerta({
+        msg: 'Todos los campos son obligatorios',
+        error: true,
+      })
+
+      return
+    }
+
+    setValidated(true);
+  };
+
+
   return (
-    <Form className="marginForm">
+    <section className="marginForm">
       <Row>
-        <Col md={6}>
+        <Col lg={6}>
           <h3>Métodos de Contactos</h3>
 
           <p className="fst-italic">
             <p className="fst-normal ">
               ¡Bienvenido al formulario de contacto!
             </p>
-            Estamos encantados de que desees ponerte en contacto conmigo.
-            En este espacio, tienes la oportunidad de comunicarte con pittydev
-            para solicitar cualquier tipo de trabajo freelance o hacer consultas
+            Estamos encantados de que desees ponerte en contacto conmigo. En
+            este espacio, tienes la oportunidad de comunicarte con pittydev para
+            solicitar cualquier tipo de trabajo freelance o hacer consultas
             relacionadas con nuestros servicios como programador.
           </p>
 
@@ -45,9 +78,51 @@ const Formulario = () => {
           </p>
         </Col>
 
-        <Col md={6}>2</Col>
+        
+        <Col lg={6} className="my-5">
+          { msg && <Alerta alerta={msg} />}
+          <Form className="my-4" noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Correo</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ej: correo@correo.com"
+                value={correo}
+                onChange={ e => setCorreo(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Nombre Completo</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ej: Juan Pedro"
+                value={nombre}
+                onChange={ e => setNombre(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Label>Mensaje</Form.Label>
+              <Form.Control
+                as="textarea"
+                placeholder="Escriba su mensaje..."
+                value={mensaje}
+                onChange={ e => setMensaje(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Enviar
+            </Button>
+
+          </Form>
+        </Col>
       </Row>
-    </Form>
+    </section>
   );
 };
 

@@ -7,20 +7,11 @@ import {
   Col,
   Button,
 } from "react-bootstrap";
-import { useRef } from "react";
-import banner from "../img/banner.jpg";
 import me from "../img/banner2.jpg"
 
 const Header = () => {
-  const bgColorHeader = useRef(null);
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 50) {
-      bgColorHeader.current.classList.add("navbar-scrolled");
-    } else if (window.scrollY < 50) {
-      bgColorHeader.current.classList.remove("navbar-scrolled");
-    }
-  });
+
 
   return (
     <>
@@ -29,8 +20,6 @@ const Header = () => {
       <Navbar
         expand="lg"
         className="navbar navbar-dark"
-        fixed="top"
-        ref={bgColorHeader}
       >
         <Container>
           <Navbar.Brand href="#home" className="fs-3 text-white font-comfortaa">
@@ -78,10 +67,10 @@ const Header = () => {
         <Row>
           <Col>
             <div className="d-flex justify-content-center marginButton">
-              <Button variant="outline-primary px-5 py-3">¡Hola!</Button>
+              <Button variant="btn btn-primary px-5 py-4 fw-bolder text-uppercase">¡Hola!</Button>
             </div>
 
-            <article className="typing-effect text-white ">Hola, soy Juan Diego...</article>
+            <article className="typing-effect text-white">Hola, soy Juan Diego...</article>
           </Col>
         </Row>
       </Container>

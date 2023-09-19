@@ -17,21 +17,12 @@ body {
   filter: brightness(0.6);
 }
 
-.navbar {
-  transition: all 0.5s;
-}
-
-.navbar-scrolled {
-  background-color: #0880EC;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
 .main-info {
   margin-bottom: 100px;
 }
 
 .marginButton {
-  margin-top: 310px;
+  margin-top: 241px;
 
 }
 
@@ -53,6 +44,10 @@ body {
   animation: typing 3s steps(16), effect .5s step-end infinite alternate;
 }
 
+.img-logo {
+  width: 250px;
+}
+
 @keyframes typing {
   from {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -70,13 +65,14 @@ body {
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   .marginForm {
-    margin-top: 450px;
+    margin-top: 50px;
   }
 }
 
 @media all and (min-width: 992px) {
   .marginForm {
-    margin-top: 500px;
+    margin-top: 100px;
     margin-bottom: 100px;
   }
+
 }
