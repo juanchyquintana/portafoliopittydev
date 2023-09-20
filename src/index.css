@@ -8,7 +8,7 @@ body {
 
 .bg-image {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   object-fit: cover;
   position: absolute;
   top: 0;
